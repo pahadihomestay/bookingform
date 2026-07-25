@@ -254,30 +254,22 @@ function collectData(){
  let food = veg.checked ? 'Vegetarian' : nonveg.checked ? 'Non-Vegetarian' : 'N/A';
  let meals = `${bf.checked?'Breakfast ':''}${lunch.checked?'Lunch ':''}${dinner.checked?'Dinner ':''}`;
  let msg = messageField.value ? messageField.value : 'N/A';
- return `🏨 *The Pahadi Ghar – Darcha | New Booking Request*%0A` +
-        ` +
-        `👤 *Guest Informations:*%0A` +
-        `*Name: ${document.getElementById('name').value.trim() || 'N/A'}*%0A` +
+ return `𝗧𝗵𝗲 𝗣𝗮𝗵𝗮𝗱𝗶 𝗚𝗵𝗮𝗿 – 𝗗𝗮𝗿𝗰𝗵𝗮 | 𝗡𝗲𝘄 𝗕𝗼𝗼𝗸𝗶𝗻𝗴 𝗥𝗲𝗾𝘂𝗲𝘀𝘁%0A` +
+        `Name: ${document.getElementById('name').value.trim() || 'N/A'}%0A` +
         `Phone: ${document.getElementById('phone').value.trim() || 'N/A'}%0A` +
         `Email: ${document.getElementById('email').value.trim() || 'N/A'}%0A` +
         `Address: ${document.getElementById('address').value.trim() || 'N/A'}%0A` +
         `Coming From: ${document.getElementById('comeFrom').value || 'N/A'}%0A` +
-        ` +
-        `📆 *Stay Details:*%0A` +
-        `*Check-in: ${document.getElementById('checkin').value || 'N/A'}*%0A` +
-        `*Check-out: ${document.getElementById('checkout').value || 'N/A'}*%0A` +
+        `Check-in: ${document.getElementById('checkin').value || 'N/A'}%0A` +
+        `Check-out: ${document.getElementById('checkout').value || 'N/A'}%0A` +
         `Nights: ${document.getElementById('days').value || 'N/A'}%0A` +
         `Guests: ${document.getElementById('guests').value || 'N/A'}%0A` +
         `Room Type: ${document.getElementById('roomType').value || 'N/A'}%0A` +
         `Rooms: ${document.getElementById('rooms').value || 'N/A'}%0A` +
-        ` +
-        `🍽️ *Meals:*%0A` +
         `Meal Plan: ${document.getElementById('mealPlan').value || 'N/A'}%0A` +
         `Food: ${food}%0AMeals: ${meals !== '' ? meals : 'N/A'}%0A` +
-        ` +
-        `💶 *Payments:*%0A` +
+        `Payments:%0A` +
         `Payment: ${payment()}%0A` +
-        ` +
         `Additional Message: ${msg}`;
 }
 function bookNow(){
