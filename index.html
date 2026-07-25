@@ -23,14 +23,77 @@ body{
   background: linear-gradient(135deg, #f4f2ef, #eae3d8);
   color: var(--text-main);
 }
+
+/* Light & Elegant Theme Top Navigation Bar */
+.top-navbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fcf9f5;
+  padding: 14px 30px;
+  color: var(--primary-dark);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid var(--border-soft);
+  box-shadow: 0 4px 12px rgba(107, 79, 46, 0.05);
+}
+.nav-back{
+  background: #fff;
+  border: 1px solid var(--border-soft);
+  color: var(--primary-dark);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+  margin-top: 0;
+  text-decoration: none;
+}
+.nav-back:hover{
+  background: #f4f2ef;
+  border-color: var(--primary);
+  transform: translateY(-1px);
+}
+.admin-btn{
+  background: #fff;
+  border: 1px solid var(--border-soft);
+  color: var(--primary-dark);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.admin-btn:hover{
+  background: #f4f2ef;
+  border-color: var(--accent);
+  color: var(--primary);
+  transform: translateY(-1px);
+}
+
 .container{
-  max-width: 920px;
-  margin: 50px auto;
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
   background: var(--card-bg);
-  border-radius: 30px;
-  padding: 50px 40px;
-  box-shadow: 0 35px 70px rgba(0,0,0,.1);
-  border:1px solid var(--border-soft);
+  border-radius: 0;
+  padding: 40px 30px;
+  box-shadow: none;
+  border: none;
+  min-height: calc(100vh - 65px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 h1{
   font-family:'Playfair Display', serif;
@@ -43,7 +106,7 @@ h1{
   text-align:center;
   font-size:16px;
   color: var(--text-muted);
-  margin-bottom:50px;
+  margin-bottom:40px;
 }
 h2{
   font-family:'Playfair Display', serif;
@@ -55,10 +118,11 @@ h2{
 }
 .card-section{
   background: #fffaf6;
-  border-radius: 20px;
+  border-radius: 16px;
   padding: 25px 20px;
   margin-bottom: 30px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+  border: 1px solid var(--border-soft);
 }
 label{
   display:block;
@@ -67,13 +131,14 @@ label{
   font-size:15px;
   color: var(--primary-dark);
 }
+/* Font size set to 16px to prevent mobile auto-zoom */
 input, select, textarea{
   width:100%;
   padding:12px 14px;
   margin-top:8px;
-  border-radius:12px;
+  border-radius:10px;
   border:1px solid var(--border-soft);
-  font-size:14.5px;
+  font-size: 16px;
   background: #fff;
 }
 input:focus, select:focus, textarea:focus{
@@ -101,148 +166,152 @@ input:focus, select:focus, textarea:focus{
   color: var(--primary-dark);
 }
 .radio-line input, .checkbox-line input{width:18px;height:18px;}
-button{
-  padding:12px 24px;
-  border:none;
-  border-radius:30px;
-  background: linear-gradient(145deg, var(--primary-dark), var(--accent));
-  color:#fff;
-  cursor:pointer;
-  font-size:15px;
-  box-shadow: 0 8px 20px rgba(0,0,0,.2);
-  margin-top:25px;
+button.submit-btn{
+  width: 100%;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(145deg, var(--primary-dark), var(--primary));
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  box-shadow: 0 8px 20px rgba(0,0,0,.15);
+  margin-top: 25px;
   transition: all .3s ease;
 }
-button:hover{transform: translateY(-2px);box-shadow:0 12px 28px rgba(0,0,0,.25);}
-.floating-call{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background: linear-gradient(145deg, var(--primary), var(--primary-dark));
-  color:#fff;
-  padding:12px 20px;
-  border-radius:50px;
-  text-decoration:none;
-  font-weight:600;
-  font-size:13.5px;
-  box-shadow:0 12px 24px rgba(0,0,0,.25);
-}
+button.submit-btn:hover{transform: translateY(-2px);box-shadow:0 12px 28px rgba(0,0,0,.25);}
+
 footer{
-  margin-top:60px;
+  margin-top:50px;
   text-align:center;
   font-size:13.5px;
   color:#5d5347;
+  border-top: 1px solid var(--border-soft);
+  padding-top: 30px;
 }
 @media(max-width:650px){
   .row{grid-template-columns:1fr;}
-  button{width:100%;}
+  .top-navbar{padding: 10px 15px;}
+  .container{padding: 25px 15px;}
+  h1{font-size: 30px;}
+  .nav-back, .admin-btn{font-size: 13px; padding: 6px 10px;}
 }
 </style>
 </head>
 <body>
+
+<!-- Top Navigation Bar -->
+<div class="top-navbar">
+  <a href="https://pahadihomestay.github.io/pahadi.ghar/" class="nav-back">
+    <span>&#8592;</span> Back To Website
+  </a>
+  <button class="admin-btn" onclick="adminLocked()">
+    </span> Admin Portal
+  </button>
+</div>
+
 <div class="container">
-<h1>The Pahadi Ghar – Darcha</h1>
-<p class="subtitle">Book Your Mountain Retreat in Just a Few Clicks</p>
+<div>
+  <h1>The Pahadi Ghar – Darcha</h1>
+  <p class="subtitle">Book Your Mountain Retreat in Just a Few Clicks</p>
 
-<div class="card-section">
-<h2>Guest Information</h2>
-<label>Full Name</label>
-<input type="text" id="name">
-<label>Email Address (Optional)</label>
-<input type="email" id="email">
-<label>Phone Number</label>
-<input type="tel" id="phone">
-<label>Your Address / City (Optional)</label>
-<input type="text" id="address" placeholder="City / Location">
-<label>Coming From</label>
-<select id="comeFrom">
-<option value="">Select Location</option>
-<option>Manali</option>
-<option>Leh</option>
-<option>Zanskar</option>
-<option>Spiti</option>
-<option>Other</option>
-</select>
-</div>
+  <div class="card-section">
+    <h2>Guest Information</h2>
+    <label>Full Name</label>
+    <input type="text" id="name">
+    <label>Email Address (Optional)</label>
+    <input type="email" id="email">
+    <label>Phone Number</label>
+    <input type="tel" id="phone">
+    <label>Your Address / City (Optional)</label>
+    <input type="text" id="address" placeholder="City / Location">
+    <label>Coming From</label>
+    <select id="comeFrom">
+      <option value="">Select Location</option>
+      <option>Manali</option>
+      <option>Leh</option>
+      <option>Zanskar</option>
+      <option>Spiti</option>
+      <option>Other</option>
+    </select>
+  </div>
 
-<div class="card-section">
-<h2>Stay Details</h2>
-<div class="row">
-<div>
-<label>Check-in Date</label>
-<input type="date" id="checkin">
-</div>
-<div>
-<label>Check-out Date</label>
-<input type="date" id="checkout">
-</div>
-</div>
-<div class="row">
-<div>
-<label>Number of Nights</label>
-<input type="number" id="days">
-</div>
-<div>
-<label>Total Guests</label>
-<input type="number" id="guests">
-</div>
-<div>
-<label>Childrens</label>
-<input type="number" id="Childs">
-</div>
-</div>
-<label>Room Category</label>
-<select id="roomType">
-<option>Normal Room</option>
-<option>Family Room</option>
-</select>
-<label>Number of Rooms</label>
-<select id="rooms">
-<option>1</option><option>2</option><option>3</option><option>4</option><option>5+</option>
-</select>
-</div>
+  <div class="card-section">
+    <h2>Stay Details</h2>
+    <div class="row">
+      <div>
+        <label>Check-in Date</label>
+        <input type="date" id="checkin">
+      </div>
+      <div>
+        <label>Check-out Date</label>
+        <input type="date" id="checkout">
+      </div>
+    </div>
+    <div class="row">
+      <div>
+        <label>Number of Nights</label>
+        <input type="number" id="days">
+      </div>
+      <div>
+        <label>Total Guests</label>
+        <input type="number" id="guests">
+      </div>
+      <div>
+        <label>Childrens</label>
+        <input type="number" id="Childs">
+      </div>
+    </div>
+    <label>Room Category</label>
+    <select id="roomType">
+      <option>Normal Room</option>
+      <option>Family Room</option>
+    </select>
+    <label>Number of Rooms</label>
+    <select id="rooms">
+      <option>1</option><option>2</option><option>3</option><option>4</option><option>5+</option>
+    </select>
+  </div>
 
-<div class="card-section">
-<h2>Dining Preference</h2>
-<label>Meal Plan</label>
-<select id="mealPlan" onchange="mealChange()">
-<option>No Meal</option>
-<option>Include Meal</option>
-</select>
-<div id="foodType" style="display:none" class="options">
-<label class="radio-line"><input type="radio" name="food" id="veg"> Vegetarian</label>
-<label class="radio-line"><input type="radio" name="food" id="nonveg">Non Vegetarian</label>
-</div>
-<div id="mealTime" style="display:none" class="options">
-<label class="checkbox-line"><input type="checkbox" id="bf"> Breakfast</label>
-<label class="checkbox-line"><input type="checkbox" id="lunch"> Lunch</label>
-<label class="checkbox-line"><input type="checkbox" id="dinner"> Dinner</label>
-</div>
-</div>
+  <div class="card-section">
+    <h2>Dining Preference</h2>
+    <label>Meal Plan</label>
+    <select id="mealPlan" onchange="mealChange()">
+      <option>No Meal</option>
+      <option>Include Meal</option>
+    </select>
+    <div id="foodType" style="display:none" class="options">
+      <label class="radio-line"><input type="radio" name="food" id="veg"> Vegetarian</label>
+      <label class="radio-line"><input type="radio" name="food" id="nonveg">Non Vegetarian</label>
+    </div>
+    <div id="mealTime" style="display:none" class="options">
+      <label class="checkbox-line"><input type="checkbox" id="bf"> Breakfast</label>
+      <label class="checkbox-line"><input type="checkbox" id="lunch"> Lunch</label>
+      <label class="checkbox-line"><input type="checkbox" id="dinner"> Dinner</label>
+    </div>
+  </div>
 
-<label>Additional Message (Optional)</label>
-<textarea id="message" rows="3" placeholder="Any special requests or message"></textarea>
-<button onclick="bookNow()">Send Booking Request</button>
+  <label>Additional Message (Optional)</label>
+  <textarea id="message" rows="3" placeholder="Any special requests or message"></textarea>
+  <button class="submit-btn" onclick="bookNow()">Send Booking Request</button>
 </div>
 
 <footer>
-<p>© 2022 The Pahadi Ghar – Darcha</p>
-<p>Phone: +91 9418776308 | +91 7876631873</p>
-<p>WhatsApp: +91 7876631873</p>
-<p>Email: pahadighar.darcha@gmail.com</p>
-<p>Instagram: pahadi.ghar</p>
-<p>Location: The Pahadi Ghar | Darcha Dangma | L&S | HP | 175132</p>
+  <p>© 2022 The Pahadi Ghar – Darcha</p>
+  <p>Phone: +91 9418776308 | +91 7876631873</p>
+  <p>WhatsApp: +91 7876631873</p>
+  <p>Email: pahadighar.darcha@gmail.com</p>
+  <p>Instagram: pahadi.ghar</p>
+  <p>Location: Darcha Dangma • L&S • HP • 175132</p>
 </footer>
+</div>
 
 <script>
 function mealChange(){
  let show = document.getElementById('mealPlan').value === 'Include Meal';
  document.getElementById('foodType').style.display = show ? 'flex' : 'none';
  document.getElementById('mealTime').style.display = show ? 'flex' : 'none';
-}
-function payment(){
- let payOption = document.querySelector('input[name="pay"]:checked');
- return payOption ? payOption.value : 'N/A';
 }
 function collectData(){
  let veg = document.getElementById('veg');
@@ -253,28 +322,36 @@ function collectData(){
  let messageField = document.getElementById('message');
  let food = veg.checked ? 'Vegetarian' : nonveg.checked ? 'Non-Vegetarian' : 'N/A';
  let meals = `${bf.checked?'Breakfast ':''}${lunch.checked?'Lunch ':''}${dinner.checked?'Dinner ':''}`;
- let msg = messageField.value ? messageField.value : 'N/A';
- return `𝗧𝗵𝗲 𝗣𝗮𝗵𝗮𝗱𝗶 𝗚𝗵𝗮𝗿 – 𝗗𝗮𝗿𝗰𝗵𝗮 | 𝗡𝗲𝘄 𝗕𝗼𝗼𝗸𝗶𝗻𝗴 𝗥𝗲𝗾𝘂𝗲𝘀𝘁%0A` +
+ let msg = messageField.value ? messageField.value.trim() : 'N/A';
+
+ return `𝗧𝗵𝗲 𝗣𝗮𝗵𝗮𝗱𝗶 𝗚𝗵𝗮𝗿 – 𝗗𝗮𝗿𝗰𝗵𝗮 | 𝗡𝗲𝘄 𝗕𝗼𝗼𝗸𝗶𝗻𝗴 𝗥𝗲𝗾𝘂𝗲𝘀𝘁%0A%0A` +
+        `*👤 Guest informations:*%0A` +
         `Name: ${document.getElementById('name').value.trim() || 'N/A'}%0A` +
         `Phone: ${document.getElementById('phone').value.trim() || 'N/A'}%0A` +
         `Email: ${document.getElementById('email').value.trim() || 'N/A'}%0A` +
         `Address: ${document.getElementById('address').value.trim() || 'N/A'}%0A` +
-        `Coming From: ${document.getElementById('comeFrom').value || 'N/A'}%0A` +
+        `Coming From: ${document.getElementById('comeFrom').value || 'N/A'}%0A%0A` +
+        `*📆 Stay Details:*%0A` +
         `Check-in: ${document.getElementById('checkin').value || 'N/A'}%0A` +
         `Check-out: ${document.getElementById('checkout').value || 'N/A'}%0A` +
         `Nights: ${document.getElementById('days').value || 'N/A'}%0A` +
         `Guests: ${document.getElementById('guests').value || 'N/A'}%0A` +
+        `Childrens: ${document.getElementById('Childs').value || 'N/A'}%0A` +
         `Room Type: ${document.getElementById('roomType').value || 'N/A'}%0A` +
-        `Rooms: ${document.getElementById('rooms').value || 'N/A'}%0A` +
+        `Rooms: ${document.getElementById('rooms').value || 'N/A'}%0A%0A` +
+        `*🍽️ Dining Preference:*%0A` +
         `Meal Plan: ${document.getElementById('mealPlan').value || 'N/A'}%0A` +
-        `Food: ${food}%0AMeals: ${meals !== '' ? meals : 'N/A'}%0A` +
-        `Payments:%0A` +
-        `Payment: ${payment()}%0A` +
-        `Additional Message: ${msg}`;
+        `Food: ${food}%0A` +
+        `Meals: ${meals !== '' ? meals.trim() : 'N/A'}%0A%0A` +
+        `*Additional Message:* ${msg}`;
 }
 function bookNow(){
  let link = `https://wa.me/917876631873?text=${collectData()}`;
  window.open(link, '_blank');
+}
+function adminLocked(){
+ alert("
+Admin Portal is currently locked / restricted.");
 }
 </script>
 </body>
