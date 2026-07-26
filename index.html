@@ -7,40 +7,37 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --primary: #6b4f2e;
-  --primary-dark: #3e2d1c;
-  --accent: #d1a24f;
-  --bg-main: #f4f2ef;
-  --card-bg: #fefcf9;
-  --text-main: #2b2b2b;
-  --text-muted: #6f6f6f;
-  --border-soft: #e3dad0;
+  --primary: #8a6f4d;          
+  --primary-dark: #2a241e;     
+  --bg-main: #fcf9f5;          
+  --card-bg: #ffffff;          
+  --text-main: #2a241e;        
+  --text-muted: #6b635b;       
+  --border-soft: #e8e1d5;      
 }
-*{box-sizing:border-box;transition: all .25s ease;}
+*{box-sizing:border-box;}
 body{
   margin:0;
   font-family:'Poppins', sans-serif;
-  background: linear-gradient(135deg, #f4f2ef, #eae3d8);
+  background: var(--bg-main);
   color: var(--text-main);
 }
 
-/* Light & Elegant Theme Top Navigation Bar */
+/* Top Navigation Bar */
 .top-navbar{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #fcf9f5;
-  padding: 14px 30px;
-  color: var(--primary-dark);
+  background: #ffffff;
+  padding: 16px 30px;
   position: sticky;
   top: 0;
   z-index: 1000;
   border-bottom: 1px solid var(--border-soft);
-  box-shadow: 0 4px 12px rgba(107, 79, 46, 0.05);
 }
 .nav-back{
-  background: #fff;
-  border: 1px solid var(--border-soft);
+  background: transparent;
+  border: none;
   color: var(--primary-dark);
   font-size: 14px;
   font-weight: 500;
@@ -48,160 +45,150 @@ body{
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 8px 14px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.02);
-  margin-top: 0;
   text-decoration: none;
 }
 .nav-back:hover{
-  background: #f4f2ef;
-  border-color: var(--primary);
-  transform: translateY(-1px);
+  color: var(--primary);
 }
 .admin-btn{
-  background: #fff;
+  background: #f4efe6;
   border: 1px solid var(--border-soft);
   color: var(--primary-dark);
-  font-size: 14px;
-  font-weight: 600;
-  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 6px 16px;
   border-radius: 20px;
   cursor: pointer;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.02);
-  margin-top: 0;
-  display: flex;
-  align-items: center;
-  gap: 6px;
 }
 .admin-btn:hover{
-  background: #f4f2ef;
-  border-color: var(--accent);
-  color: var(--primary);
-  transform: translateY(-1px);
+  background: var(--primary);
+  color: #fff;
 }
 
 .container{
-  max-width: 1000px;
+  max-width: 850px;
   width: 100%;
-  margin: 0 auto;
-  background: var(--card-bg);
-  border-radius: 0;
-  padding: 40px 30px;
-  box-shadow: none;
-  border: none;
-  min-height: calc(100vh - 65px);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  margin: 30px auto;
+  background: var(--bg-main);
+  padding: 20px;
 }
 h1{
   font-family:'Playfair Display', serif;
   text-align:center;
-  font-size:40px;
-  margin-bottom:12px;
+  font-size:38px;
+  margin-bottom:8px;
   color: var(--primary-dark);
+  letter-spacing: 0.5px;
 }
 .subtitle{
   text-align:center;
-  font-size:16px;
+  font-size:15px;
   color: var(--text-muted);
   margin-bottom:40px;
 }
 h2{
   font-family:'Playfair Display', serif;
-  font-size:24px;
-  margin-bottom:20px;
-  color: var(--primary);
-  border-bottom:1px solid var(--border-soft);
-  padding-bottom:6px;
+  font-size:22px;
+  margin-bottom:18px;
+  color: var(--primary-dark);
+  border-bottom: 1px solid var(--border-soft);
+  padding-bottom: 8px;
 }
 .card-section{
-  background: #fffaf6;
+  background: var(--card-bg);
   border-radius: 16px;
-  padding: 25px 20px;
+  padding: 30px 25px;
   margin-bottom: 30px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
   border: 1px solid var(--border-soft);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.02);
 }
 label{
   display:block;
-  margin-top:18px;
+  margin-top:16px;
   font-weight:500;
-  font-size:15px;
+  font-size:14px;
   color: var(--primary-dark);
 }
-/* Font size set to 16px to prevent mobile auto-zoom */
+
+/* Yahan font-size 16px kar di hai taaki mobile par click karne par screen zoom na ho */
 input, select, textarea{
   width:100%;
   padding:12px 14px;
-  margin-top:8px;
-  border-radius:10px;
+  margin-top:6px;
+  border-radius:8px;
   border:1px solid var(--border-soft);
-  font-size: 16px;
-  background: #fff;
+  font-size: 16px; 
+  background: #ffffff;
+  color: var(--text-main);
+  font-family: 'Poppins', sans-serif;
 }
 input:focus, select:focus, textarea:focus{
   outline:none;
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(209,162,79,.2);
+  border-color: var(--primary);
 }
 .row{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:20px;
-  margin-top:8px;
+  gap:15px;
+  margin-top:5px;
 }
 .row-3{
   display:grid;
   grid-template-columns:1fr 1fr 1fr;
-  gap:15px;
-  margin-top:8px;
+  gap:12px;
+  margin-top:5px;
 }
 .options{
   display:flex;
   flex-wrap:wrap;
   gap:20px;
-  margin-top:12px;
+  margin-top:10px;
 }
 .radio-line, .checkbox-line{
   display:flex;
   align-items:center;
-  gap:10px;
-  font-weight:500;
-  color: var(--primary-dark);
+  gap:8px;
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--text-main);
+  cursor: pointer;
 }
-.radio-line input, .checkbox-line input{width:18px;height:18px;}
+.radio-line input, .checkbox-line input{width:18px;height:18px; accent-color: var(--primary);}
+
+/* Exact main website button look */
 button.submit-btn{
   width: 100%;
-  padding: 14px 24px;
+  padding: 15px 24px;
   border: none;
   border-radius: 12px;
-  background: linear-gradient(145deg, var(--primary-dark), var(--primary));
+  background: #b59873; 
   color: #fff;
   cursor: pointer;
   font-size: 16px;
   font-weight: 600;
-  box-shadow: 0 8px 20px rgba(0,0,0,.15);
+  letter-spacing: 0.5px;
   margin-top: 25px;
-  transition: all .3s ease;
+  box-shadow: 0 4px 15px rgba(181, 152, 115, 0.3);
 }
-button.submit-btn:hover{transform: translateY(-2px);box-shadow:0 12px 28px rgba(0,0,0,.25);}
+button.submit-btn:hover{
+  background: var(--primary);
+  transform: translateY(-1px);
+}
 
 footer{
   margin-top:50px;
   text-align:center;
-  font-size:13.5px;
-  color:#5d5347;
+  font-size:13px;
+  color: var(--text-muted);
   border-top: 1px solid var(--border-soft);
   padding-top: 30px;
+  line-height: 1.8;
 }
 @media(max-width:650px){
   .row, .row-3{grid-template-columns:1fr;}
-  .top-navbar{padding: 10px 15px;}
-  .container{padding: 25px 15px;}
-  h1{font-size: 30px;}
-  .nav-back, .admin-btn{font-size: 13px; padding: 6px 10px;}
+  .top-navbar{padding: 12px 20px;}
+  .container{padding: 10px;}
+  h1{font-size: 28px;}
 }
 </style>
 </head>
@@ -213,23 +200,23 @@ footer{
     <span>&#8592;</span> Back To Website
   </a>
   <button class="admin-btn" onclick="adminLocked()">
-    Admin Portal
+    Admin
   </button>
 </div>
 
 <div class="container">
 <div>
   <h1>The Pahadi Ghar – Darcha</h1>
-  <p class="subtitle">Book Your Mountain Retreat in Just a Few Clicks</p>
+  <p class="subtitle">Book Your Stay in Just a Few Clicks</p>
 
   <div class="card-section">
     <h2>Guest Information</h2>
     <label>Full Name</label>
-    <input type="text" id="name">
+    <input type="text" id="name" placeholder="Enter your full name">
     <label>Email Address (Optional)</label>
-    <input type="email" id="email">
+    <input type="email" id="email" placeholder="name@example.com">
     <label>Phone Number</label>
-    <input type="tel" id="phone">
+    <input type="tel" id="phone" placeholder="10-digit mobile number">
     <label>Your Address / City (Optional)</label>
     <input type="text" id="address" placeholder="City / Location">
     <label>Coming From</label>
@@ -256,7 +243,6 @@ footer{
       </div>
     </div>
     
-    <!-- Yeh row theek kar di hai jisme 3 columns (Nights, Guests, Childrens) sahi se adjust honge -->
     <div class="row-3">
       <div>
         <label>Number of Nights</label>
@@ -264,7 +250,7 @@ footer{
       </div>
       <div>
         <label>Total Guests</label>
-        <input type="number" id="guests" placeholder="1">
+        <input type="number" id="guests" placeholder="2">
       </div>
       <div>
         <label>Childrens</label>
@@ -292,7 +278,7 @@ footer{
     </select>
     <div id="foodType" style="display:none" class="options">
       <label class="radio-line"><input type="radio" name="food" id="veg"> Vegetarian</label>
-      <label class="radio-line"><input type="radio" name="food" id="nonveg">Non Vegetarian</label>
+      <label class="radio-line"><input type="radio" name="food" id="nonveg"> Non Vegetarian</label>
     </div>
     <div id="mealTime" style="display:none" class="options">
       <label class="checkbox-line"><input type="checkbox" id="bf"> Breakfast</label>
@@ -303,7 +289,7 @@ footer{
 
   <label>Additional Message (Optional)</label>
   <textarea id="message" rows="3" placeholder="Any special requests or message"></textarea>
-  <button class="submit-btn" onclick="bookNow()">Send Booking Request</button>
+  <button class="submit-btn" onclick="bookNow()">Book Your Stay</button>
 </div>
 
 <footer>
@@ -358,7 +344,7 @@ function bookNow(){
  let phoneNumber = "917876631873";
  let textData = collectData();
  let url = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${textData}`;
- window.location.href = url; // Isse mobile aur desktop dono par direct WhatsApp chat khul jayegi
+ window.location.href = url;
 }
 function adminLocked(){
  alert("Admin Portal is currently locked / restricted.");
