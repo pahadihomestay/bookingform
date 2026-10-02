@@ -362,11 +362,11 @@ footer{
     <div class="row">
       <div>
         <label>Check-in Date</label>
-        <input type="date" id="checkin">
+        <input type="date" id="checkin" onchange="calculateNights()">
       </div>
       <div>
         <label>Check-out Date</label>
-        <input type="date" id="checkout">
+        <input type="date" id="checkout" onchange="calculateNights()">
       </div>
     </div>
     
@@ -493,12 +493,12 @@ footer{
 </div>
 
 <footer>
-  <p>© 2022 The Pahadi Ghar – Darcha</p>
+  <p>© 2026 The Pahadi Ghar – Darcha</p>
   <p>Phone: +91 9418776308 | +91 7876631873</p>
   <p>WhatsApp: +91 7876631873</p>
   <p>Email: pahadighar.darcha@gmail.com</p>
   <p>Instagram: pahadi.ghar</p>
-  <p>Location: Darcha Dangma • L&S • HP • 175132</p>
+  <p>Location: Darcha • L&S • HP • 175132</p>
 </footer>
 </div>
 
@@ -544,6 +544,29 @@ function mealChange(){
  let show = document.getElementById('mealPlan').value === 'Include Meal';
  document.getElementById('foodType').style.display = show ? 'flex' : 'none';
  document.getElementById('mealTime').style.display = show ? 'flex' : 'none';
+}
+
+// Function to calculate nights automatically
+function calculateNights() {
+  let checkinVal = document.getElementById('checkin').value;
+  let checkoutVal = document.getElementById('checkout').value;
+  
+  if (checkinVal && checkoutVal) {
+    let checkinDate = new Date(checkinVal);
+    let checkoutDate = new Date(checkoutVal);
+    
+    let timeDiff = checkoutDate - checkinDate;
+    let dayDiff = Math.round(timeDiff / (1000 * 60 * 60 * 24));
+    
+    let daysInput = document.getElementById('days');
+    
+    if (dayDiff > 0) {
+      daysInput.value = dayDiff;
+    } else {
+      daysInput.value = "";
+      alert("Check-out date, check-in date ke baad ki honi chahiye!");
+    }
+  }
 }
 
 function collectData(){
@@ -593,5 +616,6 @@ function adminLocked(){
  alert("Admin Portal is currently locked / restricted.");
 }
 </script>
+
 </body>
 </html>
